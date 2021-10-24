@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <title>Панель администратора Флеболог Калачев</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
+  <link rel="apple-touch-startup-image" href="/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+  <meta name="apple-mobile-web-app-title" content="Флеболог Калачев">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Chrome for Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <%#<link rel="icon" sizes="192x192" href="/favicon-192.png">%>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+
+</head>
+<body>
+
+<%= react_app(@data, {prerender: true, class: 'app', tag: 'main', id: 'app'}) %>
+
+<script type="text/javascript" id="init_data">
+    var initialData = <%= @data.to_json.html_safe %>;
+</script>
+
+<%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
+
+<noscript>
+  <div class="noscript">
+    <strong>Внимание! В Вашем браузере отключен JavaScript.</strong>
+    Для нормальной работы сайта необходимо его включить.
+  </div>
+</noscript>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+$label-text-size: 14px;
+$input-text-size: 18px;
+$label-color: #555;
+$select-hover: #f6f6f6;
+$form-red: #de1616;
+$form-green: #00872d;
+
+.counter-input {
+  border: 1px solid $primary-color;
+  display: inline-block;
+  position: relative;
+  margin-top: 36px;
+  margin-right: 16px;
+
+  input {
+    margin: 0 !important;
+    box-sizing: border-box;
+    appearance: none !important;
+    background-color: #fff !important;
+    font-size: 16px;
+    height: 32px;
+    padding: 7px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    max-width: 5em;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  button.btn {
+    background-color: $primary-color !important;
+    opacity: 1 !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    line-height: 32px;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    text-shadow: 0 1px #000;
+    color: #fff;
+    display: inline-block;
+
+    &:disabled:hover {
+      cursor: default;
+    }
+  }
+
+  .label {
+    width: 148px;
+    height: 2em;
+    line-height: 2em;
+    font-size: 13px;
+    position: absolute;
+    top: -2em;
+    left: 0;
+    text-align: center;
+  }
+}
+
+.w-input {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding-top: $label-text-size;
+  height: $label-text-size + $input-text-size + ($label-text-size * 2) + 2px;
+  margin: $input-text-size 0;
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  input {
+    box-sizing: border-box;
+    appearance: none !important;
+    background-color: transparent !important;
+  }
+
+  .r-input {
+    font-size: $input-text-size;
+    width: 100%;
+    border: none;
+    height: $input-text-size + $label-text-size*2;
+    padding: $label-text-size 0;
+    border-bottom: 2px solid #ddd;
+    transition: all 0.5s ease;
+    appearance: none !important;
+    border-radius: 0;
+  }
+
+  .r-input:focus {
+    border-bottom: 2px solid #999;
+  }
+
+  .label {
+    user-select: none;
+    position: absolute;
+    line-height: $label-text-size;
+    font-size: $label-text-size;
+    color: $label-color;
+    left: 0;
+    top: 0;
+    transition: all 0.25s ease;
+    cursor: pointer;
+  }
+
+  .r-input[value=""]:not(:focus) ~ .label {
+    font-size: $input-text-size;
+    top: ($label-text-size + $label-text-size);
+    left: 0;
+    color: lighten($label-color, 20%);
+    transition: all 0.25s ease;
+    cursor: text;
+  }
+}
+
+.w-input.dirty-input {
+  .r-input:invalid ~ .label {
+    color: $form-red;
+  }
+
+  .r-input:invalid {
+    border-bottom: 2px solid $form-red;
+    //color: darken(material-color('red', '900'), 20%);
+  }
+
+  .r-input:valid ~ .label {
+    color: $form-green;
+  }
+
+  .r-input:valid {
+    border-bottom: 2px solid $form-green;
+    //color: darken(material-color('green', '900'), 20%);
+  }
+}
+
+.w-checkbox {
+  text-align: left;
+  user-select: none;
+  margin: $input-text-size 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+
+  .i-checkbox {
+    position: absolute;
+    left: -2em;
+    height: 0;
+    width: 0;
+  }
+
+  .label {
+    font-size: $input-text-size - 2px;
+    padding-left: 2em;
+    line-height: 3em;
+  }
+
+  .label:before {
+    text-align: left;
+    line-height: 2em;
+    font-size: 1.5em;
+    font-family: "Material Design Icons";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    height: 1em;
+    width: 1em;
+    transition: all 0.5s ease;
+    color: #333;
+  }
+
+  .i-checkbox:not(:checked) ~ .label:before {
+    content: "\F131";
+  }
+
+  .i-checkbox:checked ~ .label:before {
+    content: "\F132";
+    color: #333;
+  }
+
+  .i-checkbox:focus ~ .label:before {
+    color: #333;
+  }
+
+  .i-checkbox:focus ~ .label {
+    color: #000;
+  }
+}
+
+.w-select {
+  display: block;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  padding-top: $label-text-size;
+  height: $label-text-size + $input-text-size + ($label-text-size * 2);
+  margin: $input-text-size 0;
+  cursor: pointer !important;
+
+  .label {
+    user-select: none;
+    position: absolute;
+    font-size: $label-text-size;
+    color: $label-color;
+    left: 0;
+    top: 0;
+    transition: all 0.25s ease;
+  }
+
+  .r-option {
+    font-size: $input-text-size;
+    width: 100%;
+    border: none;
+    line-height: $input-text-size;
+    height: $input-text-size + ($label-text-size * 2);
+    padding: ($label-text-size+1px) 0;
+    border-bottom: 2px solid #ddd;
+    transition: all 0.5s ease;
+    border-radius: 0;
+
+    .mdi {
+      position: absolute;
+      right: 0;
+      bottom: $label-text-size;
+    }
+
+    .mdi:before {
+      color: #999;
+      font-size: $input-text-size;
+    }
+  }
+
+  .r-options {
+    font-size: $input-text-size;
+    position: absolute;
+    left: 0;
+    top: $input-text-size;
+    width: 100%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 1px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  .option {
+    cursor: pointer;
+    width: 100%;
+    padding: $label-text-size;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .option:hover {
+    background-color: $select-hover;
+  }
+
+  .option-selected {
+    font-weight: $font-weight-accent;
+  }
+}
+
+input[type='submit'] {
+  margin: $input-text-size 0;
+}
+
+.form_common_error {
+  border: 2px solid rgba($form-red, 0.25);
+  background-color: rgba($form-red, 0.15);
+  color: darken($form-red, 20%);
+  padding: 0.75em;
+  margin: 1em 0;
+  font-size: 80%;
+  text-align: left;
+}
+@mixin form-typography($input-text-size, $label-text-size) {
+  .w-input {
+    padding-top: $label-text-size;
+    height: $label-text-size + $input-text-size + ($label-text-size * 2) + 2px;
+    margin: $input-text-size+3px 0;
+
+    .r-input {
+      font-size: $input-text-size;
+      height: $input-text-size + $label-text-size*2;
+      padding: $label-text-size 0;
+    }
+
+    .label {
+      line-height: $label-text-size;
+      font-size: $label-text-size;
+    }
+
+    .r-input[value=""]:not(:focus) ~ .label {
+      font-size: $input-text-size;
+      top: ($label-text-size + $label-text-size);
+    }
+  }
+
+  .w-checkbox {
+    margin: $input-text-size+3px 0;
+
+    .label {
+      font-size: $input-text-size - 2px;
+    }
+  }
+
+  .w-select {
+    padding-top: $label-text-size;
+    height: $label-text-size + $input-text-size + ($label-text-size * 2);
+    margin: $input-text-size+3px 0;
+
+    .label {
+      font-size: $label-text-size;
+    }
+
+    .r-option {
+      font-size: $input-text-size;
+      line-height: $input-text-size;
+      height: $input-text-size + ($label-text-size * 2);
+      padding: $label-text-size 0;
+
+      .mdi {
+        bottom: $label-text-size;
+      }
+
+      .mdi:before {
+        font-size: $input-text-size;
+      }
+    }
+
+    .r-options {
+      font-size: $input-text-size;
+      top: $input-text-size;
+    }
+
+    .option {
+      padding: $label-text-size;
+    }
+  }
+
+  input[type='submit'] {
+    margin: $input-text-size+3px 0;
+  }
+}
+@media (max-width: 739px) {
+   @include form-typography(14px, 11px);
+}
+@media (min-width: 740px) {
+   @include form-typography(16px, 12px);
+}
+@media (min-width: 960px) {
+   @include form-typography(17px, 13px);
+}
+@media (min-width: 1200px) {
+   @include form-typography(18px, 14px);
+}
+@media (min-width: 1480px) {
+   @include form-typography(20px, 16px);
+}
+
+.additional_links {
+  padding-top: 2em;
+  text-align: left;
+  font-size: 80%;
+
+  a:link,
+  a:visited {
+    color: #777;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #222;
+  }
+}

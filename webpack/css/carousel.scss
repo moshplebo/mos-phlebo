@@ -1,0 +1,69 @@
+.carousel-outer {
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.carousel {
+  @include clearfix();
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__frame {
+  white-space: nowrap;
+}
+
+.carousel__item {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.carousel__pagintaion {
+  @include clearfix();
+  display: block;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.carousel__pagintaion-item {
+  background: $primary-color;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 10px;
+  height: 10px;
+  width: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.active {
+    border-color: #fff;
+  }
+}
+
+.carousel__arrow {
+  background-color: transparent !important;
+  font-size: 100%;
+  height: 35px;
+  line-height: 35px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  z-index: 2;
+
+  &-prev {
+    left: 0;
+  }
+
+  &-next {
+    right: 0;
+  }
+}

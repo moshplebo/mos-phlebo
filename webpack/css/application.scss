@@ -1,0 +1,272 @@
+@import 'helpers';
+@import 'toolbox/variables';
+@import 'variables';
+@import 'toolbox/base';
+@import 'toolbox/grid';
+@import 'toolbox/typography';
+@import 'toolbox/buttons';
+@import 'toolbox/ripples';
+@import 'toolbox/navbar';
+@import 'toolbox/drawer';
+@import 'toolbox/hero';
+@import 'toolbox/footer';
+@import 'toolbox/breadcrumbs';
+@import 'toolbox/links_bar';
+@import 'toolbox/react-datepicker';
+@import 'toolbox/forms';
+@import 'carousel';
+@import 'header';
+@import 'footer';
+@import 'navbar';
+@import 'main_page';
+@import 'page';
+@import 'articles';
+@import 'photogallery';
+@import 'media_library';
+@import 'comments';
+@import 'date_time_picker';
+@import 'healings';
+@import 'contacts';
+@import 'prices';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic');
+
+.breadcrumbs {
+  margin: 1em 0;
+  font-size: 75%;
+  color: $primary-color;
+  font-weight: $font-weight-h;
+
+  a:link,
+  a:visited {
+    color: $primary-color;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+
+  &.empty {
+    margin: 0;
+  }
+}
+
+.view-content {
+  padding-top: 50px;
+}
+
+.modal {
+  color: #555;
+  overflow: hidden;
+  box-shadow: none;
+
+  .modal-header {
+    display: none;
+  }
+
+  .modal-actions {
+    display: none;
+  }
+}
+
+.modal-arrow {
+  position: absolute;
+  height: 100vh;
+  width: 10%;
+  z-index: 111111;
+  transition: background-color 0.5s ease;
+
+  &:last-child {
+    height: 100vh;
+    right: 0;
+  }
+
+  @media (min-width: 980px) {
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0, 0, 0, 0.5);
+      .arrow-left span svg path,
+      .arrow-right span svg path {
+        stroke: $primary-color !important;
+      }
+    }
+  }
+}
+
+.modal-close {
+  width: 80px;
+  right: 0;
+  color: #fff !important;
+  position: absolute;
+  z-index: 999999;
+  cursor: pointer;
+
+  .close {
+    width: 40px;
+    margin: 20px;
+  }
+
+  &:hover {
+    .close span svg path {
+      fill: $primary-color !important;
+    }
+  }
+}
+
+.modal-arrows {
+  .arrow-left,
+  .arrow-right {
+    position: absolute;
+    top: calc(50% - 33px);
+    width: 40px;
+    z-index: 6;
+    cursor: pointer;
+
+    span svg path {
+      stroke: #fff !important;
+    }
+  }
+
+  .arrow-left {
+    left: 25%;
+  }
+
+  .arrow-right {
+    right: 25%;
+  }
+}
+
+.menu {
+  font-size: 110%;
+}
+
+a.btn-bordered:link {
+  font-weight: $font-weight-h !important;
+}
+
+.backcall-fixed {
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 2px 1px 12px 0 rgba(0, 0, 0, 0.35);
+  display: none;
+  position: fixed;
+  z-index: 5;
+
+  &.active {
+    display: block;
+
+    .btn--backcall-header {
+      background-color: $primary-color;
+      color: #fff;
+
+      &:hover {
+        box-shadow: 4px 3px 6px 0 rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+}
+
+.gallery--modal {
+  padding: 0;
+  overflow: hidden;
+  box-shadow: none;
+  background: none;
+
+  .carousel__item div img {
+    display: inline-block;
+    max-height: 80vh;
+  }
+}
+
+.flex_carousel {
+  background-color: transparent;
+
+  .carousel__frame {
+    display: flex;
+  }
+
+  .carousel__item {
+    align-self: center;
+  }
+}
+
+.one_photo--modal {
+  padding: 0;
+  width: auto;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: none;
+  background: none;
+
+  div img {
+    max-height: 80vh;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .modal {
+    max-height: 100%;
+    width: 100%;
+  }
+
+  .gallery--modal {
+    background: #fff;
+  }
+
+  .flex_carousel {
+    background-color: transparent;
+  }
+
+  .modal-close {
+    width: 40px;
+    color: $primary-color !important;
+
+    .close {
+      width: 20px;
+      margin: 10px;
+    }
+
+    .close span svg path {
+      fill: $primary-color !important;
+    }
+  }
+
+  .modal-arrows .arrow-left,
+  .modal-arrows .arrow-right {
+    position: absolute;
+    top: calc(50% - 15px);
+    z-index: 9999999;
+    width: 15px;
+
+    span svg path {
+      stroke: $primary-color !important;
+    }
+  }
+
+  .photo-modal {
+    padding: 4em;
+  }
+}
+
+.i-radio {
+  margin-left: 1px;
+}
+
+@media screen and (min-width: 965px) {
+  .view-content {
+    padding-top: 55px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .view-content {
+    padding-top: 60px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .btn--backcall-header {
+    display: none !important;
+  }
+}

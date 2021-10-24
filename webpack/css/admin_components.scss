@@ -1,0 +1,55 @@
+.component_wrapper {
+  margin-bottom: 50px;
+}
+
+.component_block {
+  margin-bottom: 10px;
+}
+
+.component_counter-wrapper {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.component_counter-title {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+.component_counter {
+  margin: 0;
+
+  input {
+    height: 28px;
+    line-height: 28px;
+  }
+
+  button.btn {
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+  }
+}
+
+.remove-component {
+  border: 1px solid rgba(220, 220, 220, 0.8);
+  font-weight: 400;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  text-transform: none;
+}
+
+.gallery_preview {
+  display: block;
+  max-width: 150px;
+}
+
+.btn-apply {
+  background: $subheader-color;
+  color: color-for-bg($subheader-color);
+
+  &:hover {
+    background: darken($subheader-color, 3%);
+  }
+}

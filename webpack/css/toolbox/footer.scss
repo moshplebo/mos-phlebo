@@ -1,0 +1,112 @@
+footer {
+  padding: 2em 0;
+  background-color: $footer-bg;
+  color: color-for-bg($footer-bg);
+  font-size: 80%;
+
+  canvas {
+    display: none;
+  }
+
+  .cell {
+    min-height: 1px;
+  }
+
+  a:hover,
+  a:link,
+  a:visited {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__logo {
+  display: inline-block;
+  float: left;
+}
+
+.footer__navbar-wrapper {
+  display: table;
+  margin-bottom: 2em;
+  margin-left: -20px;
+  width: 100%;
+}
+
+.footer__navbar {
+  display: table-row;
+
+  a:hover,
+  a:link,
+  a:visited {
+    color: #fff;
+    display: table-cell;
+    float: none;
+    font-weight: 400;
+    padding: 0;
+    text-align: center;
+    text-transform: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.footer__company {
+  font-family: $font-family-scandal;
+  font-size: 14px;
+  margin: 0;
+
+  span {
+    display: block;
+  }
+}
+
+.footer__creator {
+  font-family: $font-family-scandal;
+  margin: 2em 0 0;
+}
+
+.footer__backcall {
+  text-align: right;
+}
+
+button.btn--backcall-footer {
+  border-width: 1px;
+  border-color: #fff;
+  color: #fff;
+  font-family: $font-family-base;
+  font-size: 16px;
+  font-weight: 400;
+  height: auto;
+  line-height: 40px;
+  margin: 0;
+  width: auto;
+
+  &:hover {
+    background: #fff;
+    color: $primary-color;
+  }
+}
+
+.footer__contacts {
+  float: right;
+}
+
+.footer__email,
+.footer__phone {
+  a:hover,
+  a:link,
+  a:visited,
+  i {
+    font-size: 20px;
+  }
+
+  i {
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,81 @@
+
+* {
+  outline: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: #ddd;
+}
+
+div.noscript {
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  background-color: #ab1f39;
+  border-top: 1px solid #901a30;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 3px #420c16;
+  opacity: 0.9;
+  user-select: none;
+}
+
+
+a:link, a:visited {
+  color: $link-color;
+}
+a:hover {
+
+  color: darken($link-color,10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+img {
+  max-width: 100%;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #ccc;
+}
+
+@function color-for-bg($color) {
+  @if (lightness($color) > 60) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+.toolbox__dialog-continer {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  z-index: 100001;
+  max-width: 40vw;
+  list-style-type: none;
+}
+
+.toolbox__dialog {
+  position: relative;
+}
+

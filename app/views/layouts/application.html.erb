@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title><%= @data[:title] %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
+  <meta name="description" content="<%= @data[:meta_description] %>">
+  <meta name="keywords" content="<%= @data[:meta_keywords] %>">
+  <meta property="og:title" content="<%= @data[:og_title] %>" />
+  <meta property="og:type" content="<%= @data[:og_type] %>" />
+  <meta property="og:url" content="<%= @data[:og_url] %>" />
+  <meta property="og:image" content="<%= @data[:og_image] %>" />
+  <link rel="canonical" href="<%= @data[:canonical_url] %>" />
+  <meta name="yandex-verification" content="d73068dc0a0cf2c9" />
+
+  <link rel="apple-touch-startup-image" href="/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <meta name="apple-mobile-web-app-title" content="Флеболог Калачев">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Chrome for Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <%#<link rel="icon" sizes="192x192" href="/favicon-192.png">%>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+</head>
+<body>
+
+<%= react_app(@data, { prerender: true, class: 'app', tag: 'main', id: 'app' }) %>
+
+<script type="text/javascript" id="init_data">
+    var initialData = <%= @data.to_json.html_safe %>
+</script>
+
+<%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162537305-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162537305-1');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(61583128, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/61583128" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- Yandex.Metrika counter -->
+
+<noscript>
+  <div class="noscript">
+    <strong>Внимание! В Вашем браузере отключен JavaScript.</strong>
+    Для нормальной работы сайта необходимо его включить.
+  </div>
+</noscript>
+
+</body>
+</html>

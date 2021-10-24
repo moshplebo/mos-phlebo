@@ -1,0 +1,87 @@
+@import './base';
+
+.btn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a.btn:link,
+a.btn:visited {
+  font-size: 80%;
+  display: inline-block;
+  background-color: rgba(220, 220, 220, 0.8);
+  color: #000;
+  text-decoration: none;
+  font-weight: $font-weight-accent;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+a.btn:focus,
+a.btn:hover {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  background-color: rgba(220, 220, 220, 1);
+}
+
+button,
+input[type='submit'] {
+  font-size: 80%;
+  display: inline-block;
+  background-color: rgba(220, 220, 220, 0.8);
+  color: #000;
+  text-decoration: none;
+  font-weight: $font-weight-accent;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover,
+input[type='submit']:hover {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  background-color: rgba(220, 220, 220, 1);
+}
+@mixin button($name, $color) {
+  a.btn-#{$name}:link,
+  a.btn-#{$name}:visited,
+  button.btn-#{$name},
+  input.btn-#{$name}[type='submit'] {
+    color: color-for-bg($color);
+    background-color: rgba($color, 0.9);
+  }
+
+  a.btn-#{$name}:focus,
+  a.btn-#{$name}:hover,
+  button.btn-#{$name}:hover,
+  input.btn-#{$name}:hover[type='submit'] {
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    background-color: rgba($color, 1);
+  }
+
+  a.btn-#{$name}:disabled,
+  a.btn-#{$name}:disabled:hover {
+    background-color: rgba(220, 220, 220, 0.8);
+    cursor: default;
+  }
+}
+@include button( 'primary', $primary-color);
+@include button( 'bordered', $primary-color);
+
+a.btn-bordered:link,
+a.btn-bordered:visited,
+button.btn-bordered,
+input.btn-bordered[type='submit'] {
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  transition: all 0.1s ease-in;
+}
+
+a.btn-bordered:hover,
+button.btn-bordered:hover,
+input.btn-bordered[type='submit']:hover {
+  background-color: $primary-color;
+  color: color-for-bg($primary-color);
+}

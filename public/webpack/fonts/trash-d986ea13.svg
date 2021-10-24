@@ -1,0 +1,10 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 187.29 257.82">
+  <title>Корзина</title>
+  <rect class="media__svg-icon--border" x="20.37" y="55.6" width="146.53" height="200.22"/>
+  <line class="media__svg-icon--content" x1="52.42" y1="101.24" x2="52.42" y2="210.16"/>
+  <line class="media__svg-icon--content" x1="93.64" y1="101.24" x2="93.64" y2="210.16"/>
+  <line class="media__svg-icon--content" x1="134.87" y1="101.24" x2="134.87" y2="210.16"/>
+  <path class="media__svg-icon--border" d="M127.59,20.73h0c0-10.89,7-19.74,15.7-19.74h30.42c8.67,0,15.71,8.85,15.71,19.74h0"
+        transform="translate(-64.86 1.01)"/>
+  <rect class="media__svg-icon--border" x="2" y="21.74" width="183.29" height="33.86"/>
+</svg>

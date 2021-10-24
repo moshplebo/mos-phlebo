@@ -1,0 +1,4 @@
+User-agent: *
+Host: https://doctorkalachev.ru
+
+sitemap: https://doctorkalachev.ru/sitemap.xml

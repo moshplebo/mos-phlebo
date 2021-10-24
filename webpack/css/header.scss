@@ -1,0 +1,439 @@
+.header {
+  background-color: rgba(0, 0, 0, 0.45);
+  font-weight: $font-weight-h;
+
+  &__before {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-out;
+  }
+
+  &__main {
+    height: 550px;
+    position: relative;
+  }
+
+  &__top-content {
+    padding: 15px 0;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  &__row {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: auto;
+
+    a:hover,
+    a:link,
+    a:visited {
+      color: $font-color-base;
+      text-decoration: none;
+      float: left;
+    }
+
+    img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+    line-height: 1.2;
+    padding-bottom: 20px;
+    font-family: $font-family-scandal;
+    width: 13%;
+  }
+
+  &__text {
+    text-align: center;
+    width: 20%;
+    line-height: 1.5;
+    font-size: 18px;
+  }
+
+  &__contacts {
+    padding-left: 10%;
+    text-align: left;
+    width: 40%;
+
+    span {
+      font-size: 14px;
+    }
+  }
+
+  &__phone {
+    margin-top: 10px;
+
+    a:hover,
+    a:link,
+    a:visited {
+      font-size: 20px;
+      line-height: 24px;
+      color: $font-color-base;
+      text-decoration: none;
+    }
+  }
+
+  &__call {
+    text-align: right;
+    width: 20%;
+
+    a {
+      margin: 5px;
+
+      img:hover {
+        opacity: 0.4;
+      }
+    }
+
+    .btn-bordered {
+      display: block;
+      margin: 5px 0 0 auto;
+      color: $font-color-base;
+      font-weight: $font-weight-h;
+      font-size: 14px;
+      border: 2px solid $font-color-base;
+    }
+
+    a.btn-bordered:hover,
+    button.btn-bordered:hover {
+      background-color: rgba($font-color-base, 0.5);
+      color: #1e082c;
+      border: 2px solid $font-color-base;
+    }
+  }
+
+  &__info {
+    padding: 75px 0;
+    margin-top: 40px;
+    transition: all 1s ease-out;
+
+    h1,
+    p {
+      color: $font-color-base;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 30%;
+      line-height: 1.3;
+      font-size: 32px;
+      padding-bottom: 2%;
+    }
+
+    p {
+      margin: 0 27.5%;
+      line-height: 1.5;
+      font-size: 20px;
+      padding: 0 2%;
+      font-weight: $font-weight-base;
+    }
+  }
+
+  &__bullets {
+    position: absolute;
+    bottom: 22px;
+    width: 100%;
+    text-align: center;
+    height: 26px;
+  }
+
+  &__bullet-before {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    margin: 0 5px;
+  }
+
+  &__bullet {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 0.1s ease-out;
+    cursor: pointer;
+    border: 0 $primary-color solid;
+
+    &.active {
+      height: 22px;
+      width: 22px;
+      left: 0;
+      top: 0;
+      border: 4px $primary-color solid;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.register-form {
+  padding: 0 10% 1em;
+
+  h2 {
+    text-align: center;
+    font-size: 26px;
+    color: $primary-color;
+  }
+
+  .w-input {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  &__header {
+    display: none !important;
+  }
+
+  &__date {
+    padding-right: 0;
+  }
+
+  &__date-input {
+    text-align: center;
+    border: none !important;
+  }
+
+  &__radio {
+    .w-checkbox {
+      margin: 0;
+    }
+  }
+
+  &__time {
+    padding-left: 0;
+    float: right;
+  }
+
+  &__calendar {
+    text-align: left;
+    padding-top: 1em;
+  }
+
+  &__label {
+    color: #888888 !important;
+    font-size: 1.1rem;
+  }
+
+  &__submit {
+    padding-top: 2em;
+    text-align: center;
+
+    input {
+      font-size: 100%;
+      width: 250px;
+    }
+  }
+
+  &__date-back {
+    padding-top: 20px !important;
+  }
+
+  &__datetime {
+    margin-top: 30px;
+    text-align: center;
+  }
+}
+
+.btn--backcall-header {
+  line-height: 30px !important;
+}
+
+@media (max-width: 1366px) {
+  .header {
+    &__name {
+      font-size: 21px;
+    }
+
+    &__info {
+      h1 {
+        font-size: 28px;
+        margin: 0 25%;
+      }
+
+      p {
+        margin: 0 19%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    &__call .btn-bordered {
+      font-size: 11px;
+    }
+
+    &__name {
+      width: 18%;
+    }
+
+    &__text {
+      width: 24%;
+    }
+
+    &__contacts {
+      padding-left: 5%;
+      width: 30%;
+    }
+
+    &__info {
+      padding: 50px 0;
+
+      h1 {
+        margin: 0 20%;
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .header {
+    &__name {
+      font-size: 18px;
+      width: 22%;
+    }
+
+    &__text {
+      font-size: 14px;
+      width: 24%;
+    }
+
+    &__contacts {
+      padding-left: 2%;
+      width: 35%;
+    }
+
+    &__call {
+      width: 25%;
+      .btn {
+        padding: 0 10px;
+      }
+    }
+
+    &__call .btn-bordered {
+      font-size: 10px;
+    }
+
+    &__info {
+      h1 {
+        font-size: 24px;
+      }
+      p {
+        margin: 0 10%;
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .header {
+    &__row {
+      display: block;
+    }
+
+    &__logo {
+      padding-left: calc(40% - 80px);
+      width: 40%;
+    }
+
+    &__name {
+      width: 33%;
+      font-size: 22px;
+    }
+
+    &__text {
+      margin: 5px auto;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+    }
+
+    &__contacts {
+      text-align: center;
+      width: 100%;
+    }
+
+    &__call {
+      margin-top: 5px;
+      width: 100%;
+      text-align: center;
+
+      .btn {
+        display: none;
+      }
+    }
+
+    &__info {
+      padding: 30px 0;
+
+      h1 {
+        font-size: 18px;
+        margin: 0 10%;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 0 0;
+        line-height: 1.1;
+      }
+    }
+  }
+
+  .register-form__submit {
+    padding-top: 4em;
+
+    input {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .header__name {
+    width: 45%;
+  }
+}
+
+@media (max-width: 370px) {
+  .header {
+    &__info {
+      h1 {
+        margin: 0 5%;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__name {
+      width: 60%;
+    }
+  }
+
+  .register-form__submit {
+    padding-top: 3em;
+  }
+}

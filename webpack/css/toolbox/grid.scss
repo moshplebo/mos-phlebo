@@ -1,0 +1,171 @@
+$gutter: 24px;
+
+.app {
+  //max-width: 1600px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.container:before,
+.row:before {
+  box-sizing: border-box;
+  display: table;
+  content: " ";
+}
+
+.container:after,
+.row:after {
+  box-sizing: border-box;
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  clear: both;
+  padding: 0 ($gutter /2);
+}
+
+.row {
+  min-height: 1px;
+  box-sizing: border-box;
+  margin: 0 -($gutter /2);
+}
+
+.wrapper-fullheight {
+  min-height: 100vh;
+}
+@mixin cell-base {
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+}
+@mixin col-list-base {
+  .lg-1-1,
+  .md-1-1,
+  .sm-1-1,
+  .xl-1-1,
+  .xs-1-1,
+  .xxl-1-1,
+  .xxs-1-1 {
+    @include cell-base;
+  }
+  @for $limit from 2 through 8 {
+     @for $i from 1 through ($limit - 1){
+      .lg-#{$i}-#{$limit},
+      .md-#{$i}-#{$limit},
+      .sm-#{$i}-#{$limit},
+      .xl-#{$i}-#{$limit},
+      .xs-#{$i}-#{$limit},
+      .xxl-#{$i}-#{$limit},
+      .xxs-#{$i}-#{$limit} {
+        @include cell-base;
+      }
+    }
+  }
+}
+@include col-list-base;
+@mixin cell($total, $width, $gutter) {
+  display: block;
+  padding: 0 ($gutter/2);
+  width: (100% / $total * $width);
+}
+@mixin col-list($name, $gutter) {
+  .#{$name}-0-0 {
+    display: none;
+  }
+  @for $limit from 1 through 8 {
+     @for $i from 1 through $limit{
+      .#{$name}-#{$i}-#{$limit} {
+        @include cell($limit, $i, $gutter);
+      }
+    }
+  }
+
+  .cell-padded {
+    margin-bottom: $gutter;
+  }
+
+  .container {
+    padding: 0 ($gutter /2);
+  }
+
+  .row {
+    margin: 0 (-($gutter/2));
+  }
+}
+$gutter: 18px;
+
+.wrapper {
+  //background-color: #fff;
+}
+@include col-list( 'md', $gutter);
+@media (max-width: 420px) {
+   @include col-list( 'xxs', 16px);
+
+  .xxs-hide {
+    display: none;
+  }
+
+  .wrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+@media (min-width: 421px) {
+   @include col-list( 'xs', 24px);
+
+  .wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (min-width: 740px) {
+   @include col-list( 'sm', 24px);
+
+  .wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (min-width: 980px) {
+  .md-right {
+    text-align: right;
+  }
+
+  .container {
+    width: 960px;
+  }
+  @include col-list( 'md', 24px);
+
+  .wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+  @include col-list( 'lg', 24px);
+
+  .wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (min-width: 1480px) {
+  .container {
+    width: 1440px;
+  }
+  @include col-list( 'xl', 24px);
+
+  .wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

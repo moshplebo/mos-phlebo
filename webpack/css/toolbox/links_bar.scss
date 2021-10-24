@@ -1,0 +1,19 @@
+.links_bar {
+  margin: .5em 0;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 90%;
+  clear: both;
+  a:link, a:visited {
+    color: #555;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    white-space: nowrap;
+    display: block;
+    float: left;
+  }
+  a:hover {
+    color: $primary-color;
+  }
+}

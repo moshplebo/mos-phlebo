@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title><%=@data[:title]%></title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
+  <!--[if lte IE 9]>
+  <script src="/ie.js"></script>
+  <![endif]-->
+  <meta name="description" content=<%=@data[:meta_description]%>>
+  <meta name="keywords" content="<%=@data[:meta_keywords]%>">
+  <meta property="og:title" content="<%=@data[:og_title]%>" />
+  <meta property="og:type" content="<%=@data[:og_type]%>" />
+  <meta property="og:url" content="<%=@data[:og_url]%>" />
+  <meta property="og:image" content="<%=@data[:og_image]%>" />
+  <link rel="canonical" href="<%=@data[:canonical_url]%>" />
+</head>
+<body class="legacy">
+
+<%= react_app(@data, {prerender: true, class: 'app', tag: 'main', id: 'app'}) %>
+
+</body>
+</html>

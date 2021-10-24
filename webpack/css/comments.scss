@@ -1,0 +1,46 @@
+.comment {
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+
+  .cell {
+    position: relative;
+  }
+
+  &__date {
+    float: right;
+    font-size: 18px;
+    padding-top: 5px;
+    color: $subheader-color;
+  }
+
+
+  &__preview-cell {
+    overflow: hidden;
+    max-height: 300px;
+    margin-bottom: 1rem;
+  }
+
+  &__preview {
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+
+  &__name {
+    margin-top: 0;
+    color: $subheader-color !important;
+  }
+}
+
+
+
+@media (max-width: 760px) {
+  .comment__name .comment__date {
+    float: none;
+    font-size: 14px;
+  }
+}

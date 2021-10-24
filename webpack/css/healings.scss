@@ -1,0 +1,32 @@
+.healings__other {
+  width: 100%;
+  font-weight: $font-weight-h;
+}
+
+.healings__other-h2 {
+  padding-top: 0 !important;
+  margin-top: 0;
+}
+
+.healings__other-cell {
+  padding: 0.25em 0;
+
+  a:link,
+  a:visited {
+    color: $primary-color;
+  }
+
+  a:hover {
+    color: $subheader-color;
+  }
+
+  &:last-child {
+    margin-bottom: 3em;
+  }
+}
+
+@media (min-width: 980px) {
+  .healings__other-back {
+    padding-left: 2em;
+  }
+}

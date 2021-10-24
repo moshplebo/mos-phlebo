@@ -1,0 +1,122 @@
+.contacts {
+  color: #000;
+
+  .btn.btn-bordered {
+    font-weight: $font-weight-h;
+    font-size: 75%;
+    color: $subheader-color;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    .contacts__span {
+      position: absolute;
+      left: 10px;
+      top: 0.05em;
+      color: #555;
+      background-color: #fff;
+      transition: all 0.25s ease;
+      cursor: text;
+    }
+
+    .contacts__input:not([value=""]) ~ .contacts__span,
+    .contacts__input:focus ~ .contacts__span {
+      top: -1.3em;
+      left: 5px;
+      font-size: 70%;
+      color: $primary-color;
+    }
+  }
+
+  h2 {
+    color: $primary-color;
+    margin-top: 0;
+  }
+
+  &__button,
+  &__row {
+    margin-bottom: 25px;
+  }
+
+  &__submit {
+    float: right;
+  }
+
+  &__table {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__input {
+    padding: 10px;
+    height: 2.3em;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: $font-family-base;
+
+    &:focus {
+      border: $primary-color 1px solid;
+    }
+  }
+
+  &__text {
+    padding: 10px;
+    height: calc(2.3em * 3 + 20px);
+    width: 100%;
+    resize: none;
+    font-family: $font-family-base;
+
+    &:focus {
+      border: $primary-color 1px solid;
+    }
+  }
+
+  &__icon {
+    width: 23px;
+  }
+
+  &__info {
+    height: 3.5em;
+    padding: 0 15px;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+
+    .btn.btn-bordered {
+      width: 100%;
+      margin-bottom: 10px;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+
+    .btn.btn-bordered.active {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  &__success {
+    text-align: center;
+    color: $primary-color;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .contacts__tabs {
+    display: block;
+  }
+}
